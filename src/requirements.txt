@@ -1,9 +1,8 @@
 torchrl
 gym
-mlagents_envs==1.0.0
-scipy >= 1.6.0
-wandb >= 0.12.14
-tqdm >= 4.60.0
+scipy
+wandb
+tqdm
 
 
 
