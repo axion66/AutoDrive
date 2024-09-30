@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "DhoeoCO1ll0y7HWX+A1gWhnD8ReCu7WVYkaQ3bCnFR2XwXmzb1iZ7WGzHfxjAdUrNv7cbJhrJGy+aNV+0W/SLA==",
+  "success": true,
+  "projectFilePath": "/Users/axion66/Downloads/RLDriving/RLDriving/RLDriving.csproj",
+  "expectedPackageFiles": [
+    "/Users/axion66/.nuget/packages/microsoft.ml.onnxruntime/1.15.1/microsoft.ml.onnxruntime.1.15.1.nupkg.sha512",
+    "/Users/axion66/.nuget/packages/microsoft.ml.onnxruntime.managed/1.15.1/microsoft.ml.onnxruntime.managed.1.15.1.nupkg.sha512",
+    "/Users/axion66/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

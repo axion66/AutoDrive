@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://db6fbg5plvnr1"]
+
+[ext_resource type="PackedScene" uid="uid://cn2van3bgkmch" path="res://car/Car.tscn" id="1_q1ac6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyof4"]
+albedo_color = Color(0.12549, 0.717647, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_if8od"]
+material = SubResource("StandardMaterial3D_dyof4")
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x813h"]
+data = PackedVector3Array(-5, 0.05, 5, 5, 0.05, 5, -5, -0.05, 5, 5, 0.05, 5, 5, -0.05, 5, -5, -0.05, 5, 5, 0.05, -5, -5, 0.05, -5, 5, -0.05, -5, -5, 0.05, -5, -5, -0.05, -5, 5, -0.05, -5, 5, 0.05, 5, 5, 0.05, -5, 5, -0.05, 5, 5, 0.05, -5, 5, -0.05, -5, 5, -0.05, 5, -5, 0.05, -5, -5, 0.05, 5, -5, -0.05, -5, -5, 0.05, 5, -5, -0.05, 5, -5, -0.05, -5, 5, 0.05, 5, -5, 0.05, 5, 5, 0.05, -5, -5, 0.05, 5, -5, 0.05, -5, 5, 0.05, -5, -5, -0.05, 5, 5, -0.05, 5, -5, -0.05, -5, 5, -0.05, 5, 5, -0.05, -5, -5, -0.05, -5)
+
+[sub_resource type="Curve3D" id="Curve3D_r8fob"]
+bake_interval = 0.1
+_data = {
+"points": PackedVector3Array(-0.894872, 0.346192, -0.0289578, 0.895, 0, 0.029, 2.57802, 0, -3.54334, -0.09, 0, -0.632, 0.09, 0, 0.632, 4, 0, -1, 0.61, 0, -0.553, -0.61, 0, 0.553, 3.564, 0, 3.137, 0.547657, 0.000467053, 0.107163, -0.547657, -0.000467053, -0.107163, -1.54735, 0, 4.07811, 0.197829, 1.215e-05, 1.09555, -0.197829, -1.215e-05, -1.09555, -4.27429, 0, -0.501752, -0.519686, -0.000383267, 0.00113797, 0.519686, 0.000383267, -0.00113797, -2.70106, 0, -3.71814),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4x7wa"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wdqi"]
+resource_local_to_scene = true
+emission = Color(1, 1, 1, 1)
+
+[node name="MainScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.835069, 0.550146, 0, -0.550146, 0.835069, -0.0623956, 4.35396, 6.93996)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0841763, 37.5978, 0.0327787)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_if8od")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x813h")
+
+[node name="Track" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+polygon = PackedVector2Array(0, 0, 0, 0.05, 0.5, 0.05, 0.1, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+curve = SubResource("Curve3D_r8fob")
+
+[node name="Car" parent="." instance=ExtResource("1_q1ac6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29245, 1.29055, 0)
+braking_material = SubResource("StandardMaterial3D_4x7wa")
+reversing_material = SubResource("StandardMaterial3D_4wdqi")

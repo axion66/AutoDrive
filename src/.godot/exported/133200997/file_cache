@@ -1,0 +1,15 @@
+res://addons/godot_rl_agents/sensors/sensors_2d/ExampleRaycastSensor2D.tscn::4a649f4ee03353fd41c8b2326af068e1::1726786365::res://.godot/exported/133200997/export-5127fc3fc2907f1e87ac8e869558593d-ExampleRaycastSensor2D.scn
+res://addons/godot_rl_agents/sensors/sensors_2d/RaycastSensor2D.tscn::5706ef859d8416e150e326b319953fcf::1726786365::res://.godot/exported/133200997/export-7454c66d21916090bf5dc7766fa8629a-RaycastSensor2D.scn
+res://addons/godot_rl_agents/sensors/sensors_3d/ExampleRaycastSensor3D.tscn::5132e3ace4e34f1809af5ab3b83b467f::1726786365::res://.godot/exported/133200997/export-1222b1ceeacbc57c3f8fe0e4235d9be0-ExampleRaycastSensor3D.scn
+res://addons/godot_rl_agents/sensors/sensors_3d/RaycastSensor3D.tscn::23516e20be48227cb983b1aa448afeab::1726786365::res://.godot/exported/133200997/export-1cc1ad7ce1f98ed0c4cee4b060bc26fd-RaycastSensor3D.scn
+res://addons/godot_rl_agents/sensors/sensors_3d/RGBCameraSensor3D.tscn::00bc7933716a6fae1ba344bbd9a386a2::1726786365::res://.godot/exported/133200997/export-d1d9cc1906d18d9a32f853b74a4d90f4-RGBCameraSensor3D.scn
+res://scenes/car/Car.tscn::2ec1bd2b0d2bfb3247bdd61e92f18e97::1727319832::res://.godot/exported/133200997/export-ddd1a42af5b04ea55c85382dcff3fc40-Car.scn
+res://scenes/car/rear_light_braking.tres::fbef3a278e258f77fbb80f9afe4b52f7::1726786366::res://.godot/exported/133200997/export-82a036be59c87564f0a883cef7ad85ad-rear_light_braking.res
+res://scenes/car/rear_light_reversing.tres::a5e9c7fe5371f2689259d87ea9ee01b1::1726786366::res://.godot/exported/133200997/export-9abb391a0560017e0109c51c767904d5-rear_light_reversing.res
+res://scenes/car/StaticCar.tscn::fe293c88be9bb4e3535753b8edf69b82::1726786366::res://.godot/exported/133200997/export-525f28d0bbe226cc4130861268cf742e-StaticCar.scn
+res://scenes/car/static_cart_material.tres::976051d517dde30baf22f96550e1cd70::1726786366::res://.godot/exported/133200997/export-2e4cd1047876637cde9e1ed3c53faf5c-static_cart_material.res
+res://scenes/car/Wheel.tscn::af4646fffa81ff483ee4c2f2f86a06a7::1726786366::res://.godot/exported/133200997/export-a02f37abb2486509a3afb464fe3331c6-Wheel.scn
+res://alpha.tres::8599dd2dc4a08fb29580210bb44f9ac1::1727337692::res://.godot/exported/133200997/export-6bd5ac1369fd9ae266673aa326b77c0e-alpha.res
+res://grids.tscn::85fcdd53582779cf3d9c172bb30cc209::1727337682::res://.godot/exported/133200997/export-1c3411e746f00d6df50b886019fa9f37-grids.scn
+res://main_scene.tscn::73dbec274f4f50e620f2b71c2b5228f4::1727337692::res://.godot/exported/133200997/export-fac9db9380da720a7609154e1ecab771-main_scene.scn
+res://training_scene.tscn::7975e56699f1a3f8a496740111e833b5::1727334008::res://.godot/exported/133200997/export-e40705112614d902cfdaef5cd3315a6f-training_scene.scn

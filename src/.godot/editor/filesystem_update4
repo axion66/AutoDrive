@@ -1,0 +1,11 @@
+res://main_scene.tscn
+res://alpha.tres
+res://grids.tscn
+res://road_only.tres
+res://scenes/car/Car.gd
+res://scenes/car/Car.tscn
+res://scenes/car/CarAIController.gd
+res://roads_7by7.tres
+res://logs/main_scene.tscn
+res://batched_learning.tscn
+res://batched_2.tscn

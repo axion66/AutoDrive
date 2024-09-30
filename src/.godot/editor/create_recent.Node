@@ -1,0 +1,14 @@
+Camera3D
+HTerrainDetailLayer
+HTerrain
+SubViewport
+GridMap
+Sync
+StaticBody3D
+MeshInstance3D
+TextureRect
+Control
+RGBCameraSensor3D
+DirectionalLight3D
+CollisionShape3D
+RigidBody3D

@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://db6fbg5plvnr1"]
+
+[ext_resource type="PackedScene" uid="uid://cn2van3bgkmch" path="res://scenes/car/Car.tscn" id="1_le4m3"]
+[ext_resource type="Script" path="res://scenes/goal.gd" id="2_b0bi2"]
+[ext_resource type="Script" path="res://scenes/Ground.gd" id="3_637pf"]
+[ext_resource type="PackedScene" uid="uid://8e4te0q8xnku" path="res://grids.tscn" id="4_kqwx8"]
+[ext_resource type="Script" path="res://scenes/roads.gd" id="5_ne4cn"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="7_tgr7l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ucia"]
+albedo_color = Color(0.192157, 1, 0.164706, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ijh8k"]
+material = SubResource("StandardMaterial3D_8ucia")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyof4"]
+albedo_color = Color(0.12549, 0.717647, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_if8od"]
+material = SubResource("StandardMaterial3D_dyof4")
+size = Vector3(120, 5, 120)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mfvhh"]
+size = Vector3(120, 5, 120)
+
+[node name="MainScene" type="Node3D"]
+
+[node name="Car" parent="." instance=ExtResource("1_le4m3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 13.1516, 1.86143, -12.0689)
+contact_monitor = true
+braking_material = null
+reversing_material = null
+
+[node name="Camera3D" type="Camera3D" parent="Car"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.3, 0.5)
+visible = false
+
+[node name="Goal" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5944, 0.902153, -19.2266)
+mesh = SubResource("BoxMesh_ijh8k")
+script = ExtResource("2_b0bi2")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.68062, 0)
+script = ExtResource("3_637pf")
+
+[node name="Floor" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0726433, -4.90108, 0.00222588)
+mesh = SubResource("BoxMesh_if8od")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.69919, 0)
+shape = SubResource("BoxShape3D_mfvhh")
+
+[node name="Roads" parent="." instance=ExtResource("4_kqwx8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.73373, -17.4323)
+script = ExtResource("5_ne4cn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("7_tgr7l")
+action_repeat = 64
+speed_up = 64

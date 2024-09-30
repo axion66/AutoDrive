@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b23wos8m3jdoq"]
+
+[ext_resource type="PackedScene" uid="uid://db6fbg5plvnr1" path="res://main_scene.tscn" id="1_mht76"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="2_d1k14"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MainScene" parent="." instance=ExtResource("1_mht76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123535, 0, 0.231689)
+
+[node name="MainScene2" parent="." instance=ExtResource("1_mht76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.517, 0, 0.231689)
+
+[node name="MainScene3" parent="." instance=ExtResource("1_mht76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.171, 0, 0.231689)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 159.302, 0)
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("2_d1k14")
+speed_up = 3
